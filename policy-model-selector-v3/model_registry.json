@@ -1,0 +1,229 @@
+{
+  "registry_version": "3.0",
+  "status": "exploratory_research_records",
+  "profiles": {
+    "kaggle_spiral_v1": {
+      "modality": "spiral",
+      "evaluation_id": "kaggle_supplied_test30_v1",
+      "scope": "30-image supplied image-level split; participant separation not established; test previously inspected"
+    },
+    "newhandpd_spiral_v1": {
+      "modality": "spiral",
+      "evaluation_id": "newhandpd_grouped_oof244_v1",
+      "scope": "244 unique images; five conservative grouped folds; exploratory;59 groups"
+    },
+    "speech_pending_v1": {
+      "modality": "speech",
+      "evaluation_id": "speech_not_evaluated",
+      "scope": "Interface reserved; no dataset or model performance registered"
+    },
+    "telephone_vowel_81_extracted_v2": {
+      "modality": "speech",
+      "evaluation_id": "telephone_vowel_81_extracted_fixed5fold_v2",
+      "scope": "exploratory Sample-ID-level out-of-fold comparison; no independent external test"
+    },
+    "italian_vowel_a_grouped_v1": {
+      "modality": "speech",
+      "evaluation_id": "italian_a98_grouped5fold_v1",
+      "scope": "Exploratory grouped five-fold OOF; 98 recordings; no external test"
+    }
+  },
+  "models": [
+    {
+      "model_id": "kaggle_spiral_v1__hog_rf",
+      "profile_id": "kaggle_spiral_v1",
+      "evaluation_id": "kaggle_supplied_test30_v1",
+      "confusion": {
+        "tn": 14,
+        "fp": 1,
+        "fn": 3,
+        "tp": 12
+      },
+      "tool_id": "spiral_hog_rf",
+      "tool_version": "1.0",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+    },
+    {
+      "model_id": "kaggle_spiral_v1__resnet18_linear",
+      "profile_id": "kaggle_spiral_v1",
+      "evaluation_id": "kaggle_supplied_test30_v1",
+      "confusion": {
+        "tn": 12,
+        "fp": 3,
+        "fn": 3,
+        "tp": 12
+      },
+      "tool_id": "spiral_resnet18_linear",
+      "tool_version": "1.0",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+    },
+    {
+      "model_id": "newhandpd_spiral_v1__hog_rf",
+      "profile_id": "newhandpd_spiral_v1",
+      "evaluation_id": "newhandpd_grouped_oof244_v1",
+      "confusion": {
+        "tn": 123,
+        "fp": 17,
+        "fn": 38,
+        "tp": 66
+      },
+      "tool_id": "spiral_hog_rf",
+      "tool_version": "1.0",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+    },
+    {
+      "model_id": "newhandpd_spiral_v1__resnet18_linear",
+      "profile_id": "newhandpd_spiral_v1",
+      "evaluation_id": "newhandpd_grouped_oof244_v1",
+      "confusion": {
+        "tn": 122,
+        "fp": 18,
+        "fn": 17,
+        "tp": 87
+      },
+      "tool_id": "spiral_resnet18_linear",
+      "tool_version": "1.0",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+    },
+    {
+      "model_id": "telephone_vowel_81_extracted_v2__acoustic_lr",
+      "profile_id": "telephone_vowel_81_extracted_v2",
+      "evaluation_id": "telephone_vowel_81_extracted_fixed5fold_v2",
+      "confusion": {
+        "tn": 27,
+        "fp": 14,
+        "fn": 16,
+        "tp": 24
+      },
+      "tool_id": "speech_acoustic_lr",
+      "tool_version": "2.0",
+      "artifact_sha256": "3e3a7ea3c69652204fc7abaf6e8720ca30c412574478037d0345c3cfaefd22da",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "R-extracted speech features v2; fixed five-fold OOF evidence. Final inference artifacts fitted separately on all 81 recordings."
+    },
+    {
+      "model_id": "telephone_vowel_81_extracted_v2__acoustic_rf",
+      "profile_id": "telephone_vowel_81_extracted_v2",
+      "evaluation_id": "telephone_vowel_81_extracted_fixed5fold_v2",
+      "confusion": {
+        "tn": 28,
+        "fp": 13,
+        "fn": 13,
+        "tp": 27
+      },
+      "tool_id": "speech_acoustic_rf",
+      "tool_version": "2.0",
+      "artifact_sha256": "95c3f6b0068a10ff709d51d2aa5f4c52adf6a7d3a6e1d6b02a7fe98291b35c2c",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "R-extracted speech features v2; fixed five-fold OOF evidence. Final inference artifacts fitted separately on all 81 recordings."
+    },
+    {
+      "model_id": "telephone_vowel_81_extracted_v2__spectrogram_resnet18_linear",
+      "profile_id": "telephone_vowel_81_extracted_v2",
+      "evaluation_id": "telephone_vowel_81_extracted_fixed5fold_v2",
+      "confusion": {
+        "tn": 25,
+        "fp": 16,
+        "fn": 15,
+        "tp": 25
+      },
+      "tool_id": "speech_spectrogram_resnet18_linear",
+      "tool_version": "2.0",
+      "artifact_sha256": "ad8cc7818279764528c774837aa2d68abe1306ea788a0086d7375e98159526f6",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "R-extracted speech features v2; fixed five-fold OOF evidence. Final inference artifacts fitted separately on all 81 recordings."
+    },
+    {
+      "model_id": "italian_vowel_a_grouped_v1__acoustic_lr",
+      "profile_id": "italian_vowel_a_grouped_v1",
+      "evaluation_id": "italian_a98_grouped5fold_v1",
+      "confusion": {
+        "tn": 40,
+        "fp": 3,
+        "fn": 6,
+        "tp": 49
+      },
+      "tool_id": "italian_acoustic_lr",
+      "tool_version": "1.0",
+      "artifact_sha256": "0a23005317ee2fbbac5c555fecedd77a63b7c53a47fbd4aa99cf592ffdbd8c8c",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "98 recordings; 46 conservative groups; fixed grouped five-fold OOF evaluation. Final inference models fitted on all 98."
+    },
+    {
+      "model_id": "italian_vowel_a_grouped_v1__acoustic_rf",
+      "profile_id": "italian_vowel_a_grouped_v1",
+      "evaluation_id": "italian_a98_grouped5fold_v1",
+      "confusion": {
+        "tn": 40,
+        "fp": 3,
+        "fn": 8,
+        "tp": 47
+      },
+      "tool_id": "italian_acoustic_rf",
+      "tool_version": "1.0",
+      "artifact_sha256": "f19e3be287d05fd2b1a387dc226a2f1979750daafd776817b9798d476f0385f5",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "98 recordings; 46 conservative groups; fixed grouped five-fold OOF evaluation. Final inference models fitted on all 98."
+    },
+    {
+      "model_id": "italian_vowel_a_grouped_v1__spectrogram_resnet18_linear",
+      "profile_id": "italian_vowel_a_grouped_v1",
+      "evaluation_id": "italian_a98_grouped5fold_v1",
+      "confusion": {
+        "tn": 32,
+        "fp": 11,
+        "fn": 9,
+        "tp": 46
+      },
+      "tool_id": "italian_spectrogram_resnet18_linear",
+      "tool_version": "1.0",
+      "artifact_sha256": "69c549b337b7fed03d6ae3dd6ba2efaaeb50dbc7e7f4fd6281611917a3c48ab5",
+      "deployment": {
+        "cpu_supported": true,
+        "latency_ms": null,
+        "cost_usd_per_case": null
+      },
+      "provenance": "98 recordings; 46 conservative groups; fixed grouped five-fold OOF evaluation. Final inference models fitted on all 98."
+    }
+  ]
+}
