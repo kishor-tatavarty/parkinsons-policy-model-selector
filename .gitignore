@@ -1,0 +1,44 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# R local session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Raw datasets and local fitted artifacts
+/data/
+/trained_tools/
+/artifacts/
+*.wav
+*.WAV
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+
+# Local execution output; curated shareable evidence belongs elsewhere
+/results/
+/logs/
+/tmp/
+/temp/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Ignore rules are convenience filters, not a secret or permission audit.
