@@ -1,0 +1,130 @@
+{
+  "status": "completed_AI_assisted_adjudication_not_independent_human_validation",
+  "arms": [
+    {
+      "arm": "structured_control",
+      "n": 120,
+      "semantic_original": 120,
+      "semantic_adjudicated": 120,
+      "semantic_percent": 100.0,
+      "semantic_wilson_lower": 96.89808335812967,
+      "semantic_wilson_upper": 100.0,
+      "outcome_matches": 120,
+      "outcome_percent": 100.0,
+      "outcome_wilson_lower": 96.89808335812967,
+      "outcome_wilson_upper": 100.0,
+      "authorized": 80,
+      "coverage_percent": 66.66666666666667,
+      "incorrect_authorizations": 0,
+      "incorrect_percent_all": 0.0,
+      "incorrect_percent_authorized": 0.0,
+      "appropriate_clarifications": 20,
+      "clarification_percent": 100.0
+    },
+    {
+      "arm": "rule_parser",
+      "n": 120,
+      "semantic_original": 0,
+      "semantic_adjudicated": 0,
+      "semantic_percent": 0.0,
+      "semantic_wilson_lower": 0.0,
+      "semantic_wilson_upper": 3.1019166418703485,
+      "outcome_matches": 20,
+      "outcome_percent": 16.666666666666668,
+      "outcome_wilson_lower": 11.055996367984616,
+      "outcome_wilson_upper": 24.345281393262287,
+      "authorized": 0,
+      "coverage_percent": 0.0,
+      "incorrect_authorizations": 0,
+      "incorrect_percent_all": 0.0,
+      "incorrect_percent_authorized": "",
+      "appropriate_clarifications": 20,
+      "clarification_percent": 100.0
+    },
+    {
+      "arm": "llm_raw",
+      "n": 120,
+      "semantic_original": 98,
+      "semantic_adjudicated": 100,
+      "semantic_percent": 83.33333333333333,
+      "semantic_wilson_lower": 75.65471860673773,
+      "semantic_wilson_upper": 88.9440036320154,
+      "outcome_matches": 111,
+      "outcome_percent": 92.5,
+      "outcome_wilson_lower": 86.35908239400624,
+      "outcome_wilson_upper": 96.00428846040397,
+      "authorized": 80,
+      "coverage_percent": 66.66666666666667,
+      "incorrect_authorizations": 8,
+      "incorrect_percent_all": 6.666666666666667,
+      "incorrect_percent_authorized": 10.0,
+      "appropriate_clarifications": 15,
+      "clarification_percent": 75.0
+    },
+    {
+      "arm": "llm_validated",
+      "n": 120,
+      "semantic_original": 98,
+      "semantic_adjudicated": 100,
+      "semantic_percent": 83.33333333333333,
+      "semantic_wilson_lower": 75.65471860673773,
+      "semantic_wilson_upper": 88.9440036320154,
+      "outcome_matches": 91,
+      "outcome_percent": 75.83333333333333,
+      "outcome_wilson_lower": 67.44985095256891,
+      "outcome_wilson_upper": 82.61415878246474,
+      "authorized": 64,
+      "coverage_percent": 53.333333333333336,
+      "incorrect_authorizations": 4,
+      "incorrect_percent_all": 3.3333333333333335,
+      "incorrect_percent_authorized": 6.25,
+      "appropriate_clarifications": 14,
+      "clarification_percent": 70.0
+    }
+  ],
+  "changed_semantic_scores": [
+    {
+      "case_id": "test_047",
+      "arm": "llm_raw",
+      "old_score": false,
+      "new_score": true,
+      "reason": "Contradictory bounds retained exactly while clarification requested; alternative preserves intent"
+    },
+    {
+      "case_id": "test_047",
+      "arm": "llm_validated",
+      "old_score": false,
+      "new_score": true,
+      "reason": "Contradictory bounds retained exactly while clarification requested; alternative preserves intent"
+    },
+    {
+      "case_id": "test_101",
+      "arm": "llm_raw",
+      "old_score": false,
+      "new_score": true,
+      "reason": "Contradictory bounds retained exactly while clarification requested; alternative preserves intent"
+    },
+    {
+      "case_id": "test_101",
+      "arm": "llm_validated",
+      "old_score": false,
+      "new_score": true,
+      "reason": "Contradictory bounds retained exactly while clarification requested; alternative preserves intent"
+    }
+  ],
+  "validation_block_counts": {
+    "deployment_grounding": 2,
+    "numeric_grounding": 11,
+    "policy_structure": 1,
+    "named_choice_guard": 2,
+    "quote_grounding": 7
+  },
+  "usage": {
+    "input_tokens": 124885,
+    "output_tokens": 16557,
+    "total_tokens": 141442
+  },
+  "mean_network_ms": 2182.3511141585186,
+  "new_api_calls": 0,
+  "classifier_executions": 0
+}

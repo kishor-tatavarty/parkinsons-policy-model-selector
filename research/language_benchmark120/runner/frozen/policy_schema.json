@@ -1,0 +1,170 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "profile_id": {
+      "type": "string",
+      "enum": [
+        "kaggle_spiral_v1",
+        "newhandpd_spiral_v1",
+        "speech_pending_v1",
+        "telephone_vowel_81_extracted_v2",
+        "italian_vowel_a_grouped_v1"
+      ]
+    },
+    "primary_metric": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "accuracy",
+        "balanced_accuracy",
+        "sensitivity",
+        "specificity",
+        "false_positive_rate",
+        "false_negative_rate",
+        null
+      ]
+    },
+    "primary_quote": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metric_constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "accuracy",
+              "balanced_accuracy",
+              "sensitivity",
+              "specificity",
+              "false_positive_rate",
+              "false_negative_rate"
+            ]
+          },
+          "operator": {
+            "type": "string",
+            "enum": [
+              "min",
+              "max"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "quote": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric",
+          "operator",
+          "value",
+          "quote"
+        ]
+      }
+    },
+    "cpu_required": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "cpu_quote": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "max_latency_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "latency_quote": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "max_cost_usd_per_case": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "cost_quote": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tie_breakers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "accuracy",
+              "balanced_accuracy",
+              "sensitivity",
+              "specificity",
+              "false_positive_rate",
+              "false_negative_rate"
+            ]
+          },
+          "quote": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric",
+          "quote"
+        ]
+      }
+    },
+    "requires_clarification": {
+      "type": "boolean"
+    },
+    "clarification_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "profile_id",
+    "primary_metric",
+    "primary_quote",
+    "metric_constraints",
+    "cpu_required",
+    "cpu_quote",
+    "max_latency_ms",
+    "latency_quote",
+    "max_cost_usd_per_case",
+    "cost_quote",
+    "tie_breakers",
+    "requires_clarification",
+    "clarification_questions",
+    "unresolved_requirements"
+  ]
+}

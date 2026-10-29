@@ -1,0 +1,15 @@
+{
+  "seed": 20261029,
+  "replicates": 10000,
+  "confidence": 0.95,
+  "method": "unstratified cluster percentile bootstrap of fixed predictions; common draws for paired models",
+  "conditioning": "saved scores, folds and fitted predictions held fixed; no retraining",
+  "estimand": "recording/image-weighted pooled metrics, not patient-level classification",
+  "limits": [
+    "Grouping identities not independently verified",
+    "Not a full uncertainty analysis of CV training or model selection",
+    "Kaggle uses image-level resampling; participants unknown; previously inspected test",
+    "No multiplicity-adjusted superiority tests",
+    "Undefined accuracy under zero coverage remains blank"
+  ]
+}

@@ -1,0 +1,44 @@
+CLAUDE REFERENCE PACK — 29 October 2026
+Scope: telephone_vowel_81_extracted_v2 and italian_vowel_a_grouped_v1 only.
+The schema retains historical profile IDs; use only these two speech profiles.
+This reference pack is frozen by the accompanying hashes. It does not establish
+that every benchmark implementation or scoring rule has yet been frozen.
+
+Metrics: sensitivity = PD cases detected / all PD cases; specificity = healthy
+correct / all healthy. False-positive rate = 1-specificity; false-negative rate
+= 1-sensitivity. Balanced accuracy = (sensitivity+specificity)/2.
+Maximize accuracy, balanced accuracy, sensitivity, specificity. Minimize false
+positive and false negative rates. Thresholds are fractions in [0,1].
+Metric constraints use inclusive min/max. Strict inequalities are not expressible
+and require clarification. Preserve intended strictness in reference notes.
+Each objective, constraint and tie-breaker requires exact supporting request text.
+One primary objective, with only explicitly ordered tie-breakers. A threshold
+alone leaves ranking unspecified and requires clarification. Ambiguous best/safe
+requests require clarification; do not invent an objective or threshold.
+CPU support can be required. Deployment limits support explicit milliseconds
+and explicit USD per case. Other units/qualitative limits require clarification.
+Missing measurements remain unknown. All registered speech latency/cost values
+are unmeasured; do not treat them as zero. No registry evidence of hospital
+validation or clinical approval is supplied.
+Compare models only within trusted profile and its evaluation identifier.
+Do not transfer performance evidence across profiles. Requirements are checked
+against recorded estimates; they do not guarantee performance on future patients.
+A clear unconditional named model choice is distinct from policy recommendation.
+Conditional named choices require clarification in the current interface scope.
+Explicit choices do not enforce another policy's metric constraints.
+
+OUTCOMES
+selected: one eligible best candidate under the stated ranking.
+tied: criteria leave multiple equally ranked eligible candidates; no hidden tie-break.
+no_eligible_model: known evidence excludes all candidates.
+insufficient_deployment_evidence: a potentially eligible candidate lacks requested
+deployment measurements; do not silently favor a more measured candidate.
+needs_clarification: missing objective, unsupported or ambiguous requirements.
+unsupported_profile / no_evaluation_evidence: profile absent or no matching evidence.
+Invalid generated policies must be blocked, not executed.
+Use a numerical tolerance of 1e-12 for metric comparisons and ranking ties.
+
+Ground truths must be reviewed. Use deterministic computation for numerical
+outcomes. Do not inspect implementation prompts/parser grammar or prior outputs.
+Do not generate requests to exploit known parser gaps. Model-generated requests
+are not independently human-authored; retain actual preparation provenance.

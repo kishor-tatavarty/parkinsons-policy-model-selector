@@ -1,0 +1,47 @@
+STATISTICAL REPORTING — PREPARED FOR LATER MANUSCRIPT REVISION
+
+No manuscript changes, model fitting, classifier executions or API calls were made for this report. The tables below summarize the existing Milestone 1 bootstrap outputs.
+
+TABLE 5: PERFORMANCE WITH 95% CONFIDENCE INTERVALS
+Values are percentages: estimate (95% interval).
+
+Dataset | Candidate | Observations | Resampling units | Accuracy | Sensitivity | Specificity
+kaggle | hog_rf | 30 | 30 | 86.67 (73.33–96.67) | 80.00 (57.14–100.00) | 93.33 (78.57–100.00)
+kaggle | resnet18_linear | 30 | 30 | 80.00 (63.33–93.33) | 80.00 (57.89–100.00) | 80.00 (57.14–100.00)
+newhandpd | hog_rf | 244 | 59 | 77.46 (69.23–85.08) | 63.46 (47.66–78.00) | 87.86 (81.25–93.55)
+newhandpd | resnet18_linear | 244 | 59 | 85.66 (79.84–90.87) | 83.65 (76.14–90.38) | 87.14 (78.38–94.70)
+telephone | acoustic_lr | 81 | 81 | 62.96 (51.85–72.84) | 60.00 (44.44–75.00) | 65.85 (51.11–80.00)
+telephone | acoustic_rf | 81 | 81 | 67.90 (58.02–77.78) | 67.50 (52.38–81.82) | 68.29 (53.49–82.23)
+telephone | spectrogram_resnet18_linear | 81 | 81 | 61.73 (50.62–71.60) | 62.50 (47.22–77.50) | 60.98 (45.45–75.68)
+italian | acoustic_lr | 98 | 46 | 90.82 (82.83–97.87) | 89.09 (77.36–100.00) | 93.02 (81.25–100.00)
+italian | acoustic_rf | 98 | 46 | 88.78 (81.05–95.79) | 85.45 (73.21–96.30) | 93.02 (84.85–100.00)
+italian | spectrogram_resnet18_linear | 98 | 46 | 79.59 (70.79–87.88) | 83.64 (73.61–92.73) | 74.42 (58.33–88.89)
+
+PAIRED ACCURACY DIFFERENCES
+Difference is candidate A minus candidate B, in percentage points. These are exploratory paired comparisons, not a prespecified confirmatory testing family.
+Dataset | Candidate A | Candidate B | Difference (95% interval)
+kaggle | hog_rf | resnet18_linear | 6.67 (-10.00–23.33)
+newhandpd | hog_rf | resnet18_linear | -8.20 (-17.74–0.85)
+telephone | acoustic_lr | acoustic_rf | -4.94 (-14.81–4.94)
+italian | acoustic_lr | acoustic_rf | 2.04 (-5.49–9.80)
+telephone_nested | acoustic_rf | policy_accuracy | 6.17 (-2.47–16.05)
+
+METHODS TEXT FOR LATER INSERTION
+We calculated 95% percentile bootstrap intervals using 10,000 resamples (seed 20261029). Resampling retained all observations within each available group: 81 Sample IDs for telephone speech, 46 reconstructed groups for Italian speech and 59 connected groups for NewHandPD. Kaggle used 30 individual test images because participant grouping was unavailable. Metrics remain recording- or image-weighted rather than patient-level. Paired comparisons used the same sampled groups for both candidates and summarized the bootstrap distribution of their metric difference. Undefined metric replicates were excluded for the relevant endpoint; valid replicate counts are retained in the accompanying outputs.
+
+INTERPRETATION AND LIMITATIONS
+The saved predictions and fold assignments were held fixed. This analysis does not repeat training or capture uncertainty from fitting, overlapping cross-validation training sets, alternative fold assignments or adaptive model selection. A paired cluster resampling comparison is useful here for describing differences in the available predictions while preserving their shared observations and recorded grouping. An ordinary independent-samples comparison would discard that pairing. No confirmatory p-values or multiplicity-adjusted superiority claims are supplied.
+
+All five accuracy contrasts summarized above have intervals that include zero. The observed numerical differences therefore do not establish statistical superiority under this analysis. For telephone nested selection, fixed RF minus the accuracy policy was 6.17 percentage points, with a 95% interval of −2.47 to 16.05 points. This is a conditional comparison of saved outer predictions, not a full uncertainty analysis of retraining and selection.
+
+NewHandPD groups were reconstructed using shared metadata identifiers and duplicate-image links, including links involving removed images. Ambiguous identifiers across class labels remain linked. These 59 groups do not independently verify participant identity; the intervals are conditional on this grouping and may not represent participant-level uncertainty.
+
+The Kaggle test split had already been examined during development. Its intervals are descriptive image-level intervals from the supplied split. Resampling neither makes the test set untouched nor establishes participant separation or external validity.
+
+Sensitivity and specificity should be presented alongside accuracy and their intervals. Pooled AUC remains descriptive; this step adds no AUC intervals. The zero-coverage telephone constrained policy has undefined classification accuracy, sensitivity and specificity; it must not be reported as 0% classification accuracy. Coverage and correct-among-all remain separate endpoints.
+
+FILES
+confidence_intervals.csv: all recorded endpoint intervals, including balanced accuracy, coverage and correct-among-all.
+paired_differences.csv: all paired endpoint differences, including sensitivity and specificity.
+bootstrap_protocol.json: resampling configuration and scope.
+The existing Milestone 1 analyze_uncertainty.py and normalized inputs provide the reproducible computation.

@@ -46,7 +46,10 @@
         "latency_ms": null,
         "cost_usd_per_case": null
       },
-      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked",
+      "artifact_sha256": "a156d1ddc0a8025eabeb86d9d26d62b03a2362e2e46f63c62cd2c5bbb9c83a12",
+      "fit_scope": "72 supplied training images",
+      "artifact_provenance": "new reconstruction from historical training split and fixed settings; not recovered original bytes"
     },
     {
       "model_id": "kaggle_spiral_v1__resnet18_linear",
@@ -65,7 +68,10 @@
         "latency_ms": null,
         "cost_usd_per_case": null
       },
-      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked",
+      "artifact_sha256": "cc4eaf32ebe5d4b67403e7954ee1cfc4ae51f3ae2836a6f535961870d17a51d4",
+      "fit_scope": "72 supplied training images",
+      "artifact_provenance": "original fitted head recovered unchanged from checkpoint nested ResNet test package"
     },
     {
       "model_id": "newhandpd_spiral_v1__hog_rf",
@@ -84,7 +90,13 @@
         "latency_ms": null,
         "cost_usd_per_case": null
       },
-      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked; Revision binding: saved artifact fitted on earlier 196-image training partition; grouped OOF244 evaluates pipeline specification, not exact artifact bytes.",
+      "artifact_sha256": "6eb090066054cfd952c0521fc993a74ca91fdf78a49978d7b339dadb8d14ab4d",
+      "artifact_fit_scope": {
+        "n_images": 196,
+        "partition": "earlier training-only partition",
+        "performance_target": "grouped OOF244 pipeline specification; not measured performance of this fitted instance"
+      }
     },
     {
       "model_id": "newhandpd_spiral_v1__resnet18_linear",
@@ -103,7 +115,13 @@
         "latency_ms": null,
         "cost_usd_per_case": null
       },
-      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked"
+      "provenance": "User local results reproduced in research session; confusion counts are authoritative; GPU not required; cost/latency not benchmarked; Revision binding: saved artifact fitted on earlier 196-image training partition; grouped OOF244 evaluates pipeline specification, not exact artifact bytes.",
+      "artifact_sha256": "a83636a73c450b4abc1866c317a5aa723b6cd332e651c61d2b23a4a6db054b4a",
+      "artifact_fit_scope": {
+        "n_images": 196,
+        "partition": "earlier training-only partition",
+        "performance_target": "grouped OOF244 pipeline specification; not measured performance of this fitted instance"
+      }
     },
     {
       "model_id": "telephone_vowel_81_extracted_v2__acoustic_lr",

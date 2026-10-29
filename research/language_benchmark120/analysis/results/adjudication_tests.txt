@@ -1,0 +1,8 @@
+test_changed_bound_rejected (test_adjudication.Tests.test_changed_bound_rejected) ... ok
+test_exact_contradictions_accepted (test_adjudication.Tests.test_exact_contradictions_accepted) ... ok
+test_omitted_clarification_rejected (test_adjudication.Tests.test_omitted_clarification_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.008s
+
+OK

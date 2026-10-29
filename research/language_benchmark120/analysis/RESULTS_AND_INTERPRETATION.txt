@@ -1,0 +1,99 @@
+PARKINSON'S POLICY REQUEST EVALUATION — CONSOLIDATED RESULTS
+29 October 2026
+
+SCOPE
+120 Claude-generated requests,20 in each of six predefined language families,
+60 per speech profile. Tested against a frozen narrow rule parser and an LLM
+single-response interpretation path with a shared deterministic selector.
+The structured arm receives reference fields. The two LLM arms share one saved
+response per request. No classifier execution. These are not independent human
+requests, a user study, or a new predictive-model test.
+
+PERCENTAGES AND DENOMINATORS
+Arm                  Semantics       Final outcome    Selections    Flagged wrong/all selected
+Structured control   100.00%(120/120) 100.00%(120/120)   80/120        0.00%(0/80)
+Rule parser            0.00%(0/120)    16.67%(20/120)     0/120        Undefined: no selections
+LLM raw               83.33%(100/120)  92.50%(111/120)   80/120       10.00%(8/80)
+LLM plus validation   83.33%(100/120)  75.83%(91/120)    64/120        6.25%(4/64)
+
+Flagged wrong authorizations among ALL120 requests: raw6.67%(8/120),
+validated3.33%(4/120). Do not mix these denominators with rates among selections.
+Appropriate clarification among20 reference clarification cases: control100%,
+parser100%,raw75%,validated70%. The parser clarified every request, so its lack
+of authorizations does not demonstrate useful model-selection coverage.
+
+INTERPRETATION
+The LLM enabled useful interpretation on language outside this frozen parser's
+finite grammar. This supports its use for this defined language-interface scope.
+It does not establish an advantage over every deterministic parser or correct
+structured input. The parser's zero policy matches reflect strict field matching
+and refusal of all120 requests, including supported partial-field omissions.
+Validation cut the number of flagged wrong authorizations from8 to4, with lower
+coverage and lower final-outcome agreement. It is a partial safeguard, not a
+semantic correctness guarantee. Raw and validated semantic scores are identical
+because they use the same generated interpretation. Validation does not rewrite it.
+
+FAILURE LOCATIONS
+Interpretation: priority confusion, negation, strictness, threshold rounding,
+unnecessary clarification, unsupported metric/unit interpretation, omitted
+clarification flags, and conditional-model scope errors.20 semantic mismatches
+remain under the adjudicated rubric. Some match the expected model anyway.
+Validation:23 outputs blocked, including correctly interpreted requests whose
+quotes/numbers or unconditional-choice wording failed narrow checks. See
+validation_blocks.csv for case-level categories and semantic correctness.
+The generated cost request '5 cents' was incorrectly mapped to a false-positive
+constraint. 'Above0.62' became inclusive and changed priority; both arms authorized
+selection. A balanced-accuracy minimum was promoted to the ranking objective.
+
+ADJUDICATION AND HISTORICAL SCORE PRESERVATION
+Original rubric:98/120 semantic agreement(81.67%).
+Post-output AI-assisted rubric:100/120(83.33%). Only test_047 and test_101 change.
+Both requests have contradictory bounds. The LLM preserves those exact bounds
+and explicitly asks for clarification. The original reference put them only
+in unresolved prose. Both representations preserve the request's conflict.
+The alternative is applied to every arm consistently; no request, original
+reference, model response, parser, prompt or validator was changed.
+All four original and adjudicated scores remain in four_arm_results.csv.
+The original references are in inputs/. reference_review_log.csv records the
+analysis disposition of every case. The alternative constraints are explicit
+in finalize_scores.py. Three adjudication regression tests passed.
+This is AI-assisted review after model outputs were visible, not an independent
+human adjudication. Authors may review/approve the analysis for submission;
+do not relabel it as blinded review or pre-specified scoring.
+Seconds/cents retain clarification under the supplied supported-unit scope.
+CPU false/null both mean no CPU constraint. Strict bounds remain distinct from
+inclusive bounds. Numeric ratios remain correct references even when blocked.
+
+UNCERTAINTY AND GENERALIZATION
+CSV includes descriptive95% Wilson intervals. Semantic LLM interval75.65–88.94%;
+raw final-outcome interval86.36–96.00%;validated67.45–82.61%.
+These assume independent requests; the deliberately constructed model-generated
+set is not a probability sample of researcher language. The frozen set tests
+six scoped families. It does not establish clinical robustness, general safety
+or researcher usability. No multiplicity-adjusted population superiority claim.
+Semantics are normalized field agreement with accepted alternatives; free-text
+clarification quality is not certified by the automatic scorer. For example,
+some conditional-choice clarification questions fail to explain the implementation
+boundary clearly. Preserve that limitation when describing request understanding.
+
+PROVENANCE AND OPERATIONAL MEASUREMENTS
+120 unique saved response IDs; request/profile content, request hashes, model,
+prompt and schema matched the contract.240 LLM status/model decisions replayed.
+124,885 input and16,557 output tokens; total141,442. Generation is shared, so
+count its cost once. Mean serial network elapsed time2.182s per request. No
+controlled user-effort/time study and no runtime-memory comparison were made.
+No new API calls for scoring/adjudication; no classifier runs or training.
+
+REPRODUCE
+Extract this package separately. Python standard library suffices.
+  python finalize_scores.py --llm-results PATH_TO_llm_v1 --offline-results PATH_TO_offline_v1
+  python -m unittest test_adjudication.py -v
+Use a separate --output directory to preserve packaged results. The script
+reads saved outputs; no keys, network clients or predictor invocation are used.
+
+MANUSCRIPT REPORTING
+Report both the original81.67% and post-adjudication83.33% semantic agreement,
+with the two accepted alternatives disclosed. Main conclusions are unchanged:
+LLM interpretation exceeds this narrow parser's coverage; validation reduces
+flagged erroneous authorization but introduces false rejections. Do not describe
+this as universal superiority, a new clinical validation or a human usability test.
